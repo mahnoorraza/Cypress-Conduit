@@ -1,0 +1,17 @@
+/// <reference types="Cypress" />
+
+import LoginPage from '../PageObjects/LoginPage'
+
+describe('Test Suite', function() 
+    {
+        it('Valid Login Test', function()
+        {
+        const lp = new LoginPage()
+        //LoginPage.visit()
+        lp.visit()
+        lp.fillEmail('admin@yourstore.com')
+        lp.fillPassword('admin')
+        lp.submit()
+        cy.title().should('be.equal','Dashboard / nopCommerce administration')
+        })
+    })   
